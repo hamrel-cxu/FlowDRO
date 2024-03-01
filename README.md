@@ -45,7 +45,7 @@ The left figure shows results on binary MNIST digits and the right figures shows
 
 ## Illustration
 
-Our trained flow models yield continuous and meaningful changes from the nominal distribution $P$ to the least favorable distribution $Q^*$, from which adversarial samples can be obtained.
+Our trained flow models also yield continuous and meaningful changes from samples in the nominal distribution $P$ to those in the least favorable distribution $Q^*$.
 
 **On MNIST**
 
