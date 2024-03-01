@@ -1,5 +1,5 @@
 # FlowDRO
-Official implementation of "Flow-based Distributionally Robust Optimization", which is published in *IEEE Journal on Selected Areas in Information Theory---Information-Theoretic Methods for Trustworthy and Reliable Machine Learning*.
+Official implementation of "[Flow-based Distributionally Robust Optimization](https://arxiv.org/pdf/2310.19253.pdf)", which is published in *IEEE Journal on Selected Areas in Information Theory---Information-Theoretic Methods for Trustworthy and Reliable Machine Learning*.
 
 Please direct implementation inquiries to cxu310@gatech.edu.
 
