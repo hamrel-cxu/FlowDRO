@@ -9,17 +9,25 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-We provide the complete code to reproduce the training of robust classifier on MNIST digits classification, where our FRM is compared against WRM in Fig 6(a-b) of https://arxiv.org/pdf/2310.19253.pdf.
+We provide the complete code to reproduce the training of robust classifier on MNIST digits classification, where our FRM is compared against WRM as shown below (also see Fig 6 of https://arxiv.org/pdf/2310.19253.pdf). In this case, lower prediction errors are better. 
 
-* To train on binary MNIST digits
+* To train and test on binary MNIST digits
 ```
 bash train_eval_mnist_binary.sh
 ```
 
-* To train on full MNIST digits
+* To train and test on full MNIST digits
 ```
 bash train_eval_mnist_full.sh
 ```
+
+The left figure shows results on binary MNIST digits and the right figures shows results on full MNIST digits.
+
+<p align="center">
+  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/binary_mnist.png" width="400" height="200"/>
+  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/full_mnist.png" width="400"  height="200"/>
+</p>
+
 
 ## Citation
 ```
@@ -37,15 +45,21 @@ bash train_eval_mnist_full.sh
 
 ## Illustration
 
-Our flow models yield gradual and meaningful changes from the nominal distribution $P$ to the least favorable distribution $Q$, from which adversarial samples can be obtained.
+Our trained flow models yield continuous and meaningful changes from the nominal distribution $P$ to the least favorable distribution $Q^*$, from which adversarial samples can be obtained.
 
-**Illustration on MNIST**
+**On MNIST**
+
+The left figure visualizes the perturbation trajectories from digits 0 to 8 under 2D T-SNE embedding; in this case, digits 8 are adversarial samples based on digits 0, which are the nominal samples.
+
+The right figure shows the corresponding trajectory in pixel space, along with the corresponding movement between original and perturbed images over integration steps of the continuous-time flow model.
 <p align="center">
-  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/MNIST_tsne.png" width="600" height="450"/>
+  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/MNIST_tsne.png" width="450" height="450"/>
   <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/MNIST_traj.png" width="200"  height="450"/>
 </p>
 
-**Illustration on CIFAR10**
+**Oon CIFAR10**
+
+The trajectory in pixel space from nominal samples (top row) to adversarial samples (bottom row) via our flow model. Captions on the top and bottom indicate predictions by a pre-trained image classifiers on these samples.
 <p align="center">
-  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/Cifar10_traj.png" width="800" height="450" />
+  <img src="https://github.com/hamrel-cxu/FlowDRO/blob/main/figs/Cifar10_traj.png" width="600" height="450" />
 </p>
